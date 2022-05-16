@@ -1,5 +1,6 @@
 package com.devsuperior.movieflix.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.devsuperior.movieflix.dto.MovieByGenreDTO;
 import com.devsuperior.movieflix.dto.MovieDTO;
+import com.devsuperior.movieflix.dto.ReviewDTO;
 import com.devsuperior.movieflix.entities.Genre;
 import com.devsuperior.movieflix.entities.Movie;
 import com.devsuperior.movieflix.repositories.GenreRepository;
@@ -32,9 +35,14 @@ public class MovieService {
 	}
 
 	@Transactional(readOnly = true)
-	public Page<MovieDTO> findByGenre(Long genreId, Pageable pageable) {
+	public Page<MovieByGenreDTO> findByGenre(Long genreId, Pageable pageable) {
 		Genre genre = (genreId == 0) ? null : genreRepository.getOne(genreId);
-		Page<Movie> page = repository.findAllPagedByGenre(pageable, genre);
-		return page.map(x -> new MovieDTO(x));
+		return repository.findAllPagedByGenre(pageable, genre);
 	}
+
+	@Transactional(readOnly = true)
+	public List<ReviewDTO> findReviewsByMovie(Long id) {
+		return repository.findReviewsByMovie(id);
+	}
+
 }
