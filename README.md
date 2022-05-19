@@ -12,3 +12,13 @@ Um usuário possui nome, email e senha, sendo que o email é seu nome de usuári
 <div align="center">
 <img src="https://github.com/CarlosDaniel396/movieflix/blob/main/movieflix.png"/>
 </div>
+
+# Tecnologias Usadas
+- Java 11
+- Spring Boot
+- Spring Cloud
+- JWT
+- OAuth2
+- JPA / Hibernate
+- Maven
+- PostgreSQL
