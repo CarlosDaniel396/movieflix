@@ -18,6 +18,7 @@ Um usuário possui nome, email e senha, sendo que o email é seu nome de usuári
 - Maven
 - OAuth/JWT
 - Junit
+- Postgresql
 
 # Como executar o projeto
 
