@@ -27,9 +27,6 @@ Pré-requisitos: Java 11
 # Clonar repositório
 git clone https://github.com/CarlosDaniel396/movieflix.git
 
-# entrar na pasta do projeto back end
-cd backend
-
 # executar o projeto
 ./mvnw spring-boot:run
 ```
